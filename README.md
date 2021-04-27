@@ -51,7 +51,7 @@ The AutoML-Variant followd the same steps:
 + Submitting the Run  
 
 
-The Best Version used a VotingEnsemble and did perform slightly better,than the Logistic Regression. The Voting Classifier was slightly better, achieving an Accuracy of 0.917. 
+The Best Version used a VotingEnsemble and did perform slightly better,than the Logistic Regression. The Voting Classifier achieves an Accuracy of 0.917. 
 
 ## Pipeline comparison
 
