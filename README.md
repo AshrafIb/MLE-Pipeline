@@ -28,7 +28,9 @@ My Scikit-Learn pipeline consists of the following steps:
     +  penalty (the type of regularization - l1 or l2)
 +  Saving the best Model and the best Params
 
-The RandomParameterSampling did consider a BanditPolicy and thus terminating each run early, which was deviated (by a slack_factor of 0.1) from the best model. This saves computational time and thus ressources. 
+A RandomParameterSampling randomly selects Parameters from a specified Range. It is equivalent to Sklearns RandomizedCV, where an Algorithms is used with a Random set of predefined Parameters. This is not as time consuming and exhaustive as a Grid-Sweep, where each combination is tested. 
+
+The RandomParameterSampling did consider a BanditPolicy and thus terminating each run early, which is deviated (by a slack_factor of 0.1) from the best model. This saves computational time and thus ressources. 
 
 The best Model has a C-value of 1.7, a Max-Iteration of 89 and a l1-Penalty.
 
@@ -55,14 +57,14 @@ The Best Version used a VotingEnsemble and did perform slightly better,than the 
 
 ## Pipeline comparison
 
-AutoML is easier to use, when several Algorithms should be compared, because it takes fewer steps to configure the Grid of Comparision. In my Hyperdrive approach, i have to make a decision for a specific Algorithm at first and then have to define the Params i want to iterate over. AutoML does this automatically for each chosen Algorithm and picks randomly Paremeters. 
+AutoML is easier to use, when several Algorithms should be compared, because it takes fewer steps to configure the Grid of Comparision. In my Hyperdrive approach, i have to make a decision for a specific Algorithm at first and then have to define the Params i want to iterate over. AutoML does this automatically and chooses from all Classification-Algorithms and picks randomly Paremeters. Thus AutoML is a faster possibility to train models. 
 
 Even if the accuracy is slightly better in the AutoML variant, I would not consider this because the data is unbalanced. Therefore, other metrics are more important; I will discuss this in the next section. 
 
 
 ## Future work
 
-In a next run, i would use an AutoML approach again, but focusing on a F1-Score, or in discussion with a business expert understand the importance of precision and recall in this context and determine an optimal curve of both. 
+In a next run, i would use an AutoML approach again, but focusing on a F1-Score, or in discussion with a business expert try to understand the importance of precision and recall in this context and determine an optimal curve of both. 
 
 I would than take the best performing Algorithm and define a Hyperdrive for it, where i go into a mirco-analysis of best performing Parameters. 
 
