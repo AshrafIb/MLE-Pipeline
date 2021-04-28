@@ -67,7 +67,7 @@ XGBoostClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
 
 another approach differs marginally, 
 
-```XGBoostClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
+``` XGBoostClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
                    colsample_bynode=1, colsample_bytree=0.9, eta=0.01, gamma=0,
                    learning_rate=0.1, max_delta_step=0, max_depth=4,
                    max_leaves=0, min_child_weight=1, missing=nan,
@@ -75,7 +75,7 @@ another approach differs marginally,
                    objective='reg:logistic', random_state=0,
                    reg_alpha=1.0416666666666667, reg_lambda=0.7291666666666667,
                    scale_pos_weight=1, seed=None, silent=None, subsample=1,
-                   tree_method='auto', verbose=-10, verbosity=0)```
+                   tree_method='auto', verbose=-10, verbosity=0) ```
 
 For a detailed view, take a look into my JupyterNotebook where the Parameters of all 36 Algorithms are printed. 
 
