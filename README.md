@@ -50,12 +50,13 @@ The AutoML-Variant followd the same steps:
     n_cross_validations=5,
     max_concurrent_iterations=4,
     max_cores_per_iteration=-1)```
+    ```
 + Submitting the Run  
 
 Finally, AutoML identifies a VotingEnsemble as the best Classifier for this Task. A VotingEnsemble is a Meta-Classifier, consisting of several Classifiers, where the final Classification is based on a majority voting. This VotingEnsemble consists of 36 different Classifiers based on three Algorithms: XGBoostClassifier, LightGBMClassifier and LogisticRegression. Each Classifier is equipped with different Parameters. For Example on Version of a XGBoost is build on the following params:
 
-
-```Example 1 =XGBoostClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
+Example 1:
+XGBoostClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
                      colsample_bynode=1, colsample_bytree=0.7, eta=0.05, gamma=1,
                      grow_policy='lossguide', learning_rate=0.1, max_bin=63,
                      max_delta_step=0, max_depth=6, max_leaves=0,
@@ -65,9 +66,8 @@ Finally, AutoML identifies a VotingEnsemble as the best Classifier for this Task
                      scale_pos_weight=1, seed=None, silent=None, subsample=0.7,
                      tree_method='hist', verbose=-10, verbosity=0))``` 
 
-another approach differs marginally, 
-
-```Example 2 = XGBoostClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
+Example 2: 
+XGBoostClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
                    colsample_bynode=1, colsample_bytree=0.9, eta=0.01, gamma=0,
                    learning_rate=0.1, max_delta_step=0, max_depth=4,
                    max_leaves=0, min_child_weight=1, missing=nan,
@@ -77,7 +77,7 @@ another approach differs marginally,
                    scale_pos_weight=1, seed=None, silent=None, subsample=1,
                    tree_method='auto', verbose=-10, verbosity=0)```
 
-For a detailed view, take a look into my JupyterNotebook where the Parameters of all 36 Algorithms are printed. 
+Both approaches differ marginally. For a detailed view, take a look into my JupyterNotebook where the Parameters of all 36 Algorithms are printed. 
 
 The Best Version used a VotingEnsemble and did perform slightly better,than the Logistic Regression. The Voting Classifier achieves an Accuracy of 0.917. 
 
@@ -98,3 +98,7 @@ I would than take the best performing Algorithm and define a Hyperdrive for it, 
 ## Proof of cluster clean up
 
 The Cluster was deleted via code in my Notebook. 
+
+```
+
+```
